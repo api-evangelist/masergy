@@ -1,8 +1,29 @@
 aid: masergy
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/masergy.png
 name: Masergy
-description: Masergy is a company surfaced as a portfolio company of lightspeed-venture-partners and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Masergy Communications was a managed networking and security provider offering
+  software-defined networking (SD-WAN), secure networking (SASE), managed
+  security services, and unified communications as a service (UCaaS/CCaaS) to
+  enterprises over a global software-defined platform. Masergy was acquired by
+  Comcast Business in October 2021 and folded into Comcast Business; the
+  masergy.com web properties now redirect to business.comcast.com/masergy/.
+  Added to the API Evangelist network as a portfolio company of
+  lightspeed-venture-partners. Enrichment found no live standalone developer
+  portal or API surface (api.masergy.com returns HTTP 502; developer/docs
+  subdomains do not resolve), so this profile documents identity and the
+  probed domain-security posture only.
 url: https://raw.githubusercontent.com/api-evangelist/masergy/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,14 +31,32 @@ x-backed-by:
 - lightspeed-venture-partners
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-status: acquired
+x-acquired-by: comcast-business
+x-acquired-date: '2021-10'
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Networking
+- SD-WAN
+- SASE
+- Managed Security
+- Unified Communications
+- Cloud Networking
+- Enterprise
 apis: []
+common:
+- type: DomainSecurity
+  url: security/masergy-domain-security.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
