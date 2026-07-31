@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: probed
+source: live TLS/HTTP HEAD + dig on masergy.com (2026-07-20)
+note: >-
+  Masergy Communications was acquired by Comcast Business in October 2021 and
+  folded into Comcast Business. The masergy.com web hosts now 301-redirect to
+  business.comcast.com/masergy/. The domain's DNS + email records remain active
+  (Proofpoint-managed). No standalone Masergy API/developer surface is live:
+  api.masergy.com resolves to F5 Distributed Cloud but returns HTTP 502, and
+  developer.masergy.com / docs.masergy.com do not resolve.
+hosts:
+  - host: www.masergy.com
+    https: true
+    tls_version: TLSv1.2
+    cert_valid: true
+    hsts: false
+    redirects_to: https://business.comcast.com/masergy/
+  - host: api.masergy.com
+    https: true
+    http_status: 502
+    live_api: false
+    upstream: F5 Distributed Cloud (ves.io)
+domains:
+  - domain: masergy.com
+    dnssec: false
+    caa: []
+    spf: true
+    spf_record: "v=spf1 include:%{ir}.%{v}.%{d}.spf.has.pphosted.com ~all"
+    dmarc: true
+    dmarc_policy: reject
+    dmarc_provider: Proofpoint Email Defense
